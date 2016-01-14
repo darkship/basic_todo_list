@@ -1,0 +1,10 @@
+<head>
+  <title>todolist-demo</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{>todolist_input placeholderText="Write your task here and press Enter" buttonText="Add" collection=todoCollection }}
+  {{>todolist_list todos=todoItems collection=todoCollection itemTemplate="todolist_item"}}
+</body>

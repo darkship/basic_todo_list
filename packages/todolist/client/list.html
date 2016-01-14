@@ -1,0 +1,27 @@
+<template name="todolist_list">
+  <div class="todolist_list">
+    {{#each todo in todos}}
+        {{>Template.dynamic template=itemTemplate data=(templateData todo)}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="todolist_item">
+  <div class="todolist_item">
+      <div class="todolist_status">
+          {{#if todo.done}}
+            <button type="button" class="f_toggleStatus todolist_done"></button>
+          {{else}}
+            <button type="button" class="f_toggleStatus todolist_notdone"></button>
+          {{/if}}
+
+      </div>
+      <div class="todolist_title">
+        {{>todolist_editable_input class="f_updateTitle" value=todo.title}}
+      </div>
+      <div class="todolist_remove">
+        <button type="button" class="f_remove">
+        </button>
+      </div>
+  </div>
+</template>

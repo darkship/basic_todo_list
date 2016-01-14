@@ -1,0 +1,93 @@
+.todolist_input,.todolist_list{
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  div{
+    display: inherit;
+  }
+  input,button{
+    border-radius: 0;
+  }
+  input{
+    padding: 6px 12px;
+    height: 34px;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #CCC;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    &:focus{
+      border-color: #66AFE9;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+    }
+  }
+  button{
+    height: 26px;
+    width: 26px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    &:focus{
+      outline: none;
+    }
+    &::-moz-focus-inner {
+      border: 0;
+    }
+  }
+}
+
+.todolist_input{
+  input{
+    width:80%
+  }
+}
+.todolist_list{
+  .todolist_item{
+    margin: 5px 0;
+    width: 100%;
+    @media(min-width:335px) and (max-width:799px)
+    {
+      width: 90%;
+    }
+    @media(min-width:800px)
+    {
+      width: 60%;
+    }
+
+
+    &:first-child{
+        margin-top:20px;
+    }
+    .todolist_remove,.todolist_status{
+      height:100%;
+      vertical-align:middle;
+    }
+    .todolist_status{
+      .todolist_done{
+        background: url("https://maxcdn.icons8.com/windows8/PNG/26/User_Interface/checked_checkbox-26.png")
+      }
+      .todolist_notdone{
+        background: url("https://maxcdn.icons8.com/windows8/PNG/26/User_Interface/unchecked_checkbox-26.png")
+      }
+    }
+    .todolist_title{
+      width: 80%;
+      input{
+        box-sizing: border-box;
+        width: 100%;
+      }
+    }
+    .todolist_remove>button{
+      visibility: hidden;
+      background: url("https://maxcdn.icons8.com/iOS7/PNG/25/User_Interface/delete_sign-25.png") no-repeat;
+    }
+    &:hover{
+      .todolist_remove>button{
+        visibility: visible;
+      }
+    }
+  }
+}
